@@ -8,8 +8,10 @@
 var score = document.querySelector('.tries');
 var button = document.querySelector('.boton_try');
 
+//El número aleatorio no con cada click
+var aleatorio = Math.random()*100;
+var aleatorio2 = Math.ceil(aleatorio);
+
 	button.addEventListener('click', function(){
-   	var aleatorio = Math.random()*100;
-		var aleatorio2 = Math.ceil(aleatorio);
-		alert(aleatorio2);
+		console.log(aleatorio2);
 });
