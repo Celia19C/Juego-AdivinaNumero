@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="css/styles.css">
+	<title>Juego</title>
+</head>
+<body>
+	<section class="primero">
+		<header>
+			<h1> Adivina el número</h1>
+			<p class="tries">0</p>
+		</header>
+		<main>
+		<form class="number" action="index.html" method="post">
+			<label for="box_number" class="introduce">Introduce un número</label>
+			<input type="text" id="box_number" name="number">
+			<button type="button" class="boton_try" name="button">Prueba</button>
+		</form>
+		<form class="name" action="index.html" method="post">
+			<label for="box_name" class="introduce"></label>
+			<input type="text" id="box_name" name="name" placeholder="Nombre">
+			<button type="button" class="boton_save" name="button">Guarda</button>
+		</form>
+		<div class="pistas"> <p>Escribe un número y prueba</p>
+		</div>
+	</main>
+</section>
+	<section class="historico">
+		<div class="history">
+			<h1>Histórico</h1>
+		</div>
+		<div class="orden">
+			<ul>
+
+			</ul>
+		</div>
+	</section>
+
+
+	<script type="text/javascript" src="js/main.js">	</script>
+
+</body>
+</html>
