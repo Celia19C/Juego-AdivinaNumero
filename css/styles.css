@@ -65,6 +65,9 @@ main {
 .name {
 	display: none;
 }
+/*.open {
+	display: inline;
+}*/
 .pistas {
 	text-align: center;
 	color: blue;
@@ -89,5 +92,6 @@ main {
 }
 .tries {
 	right:40px;
+	top: 63px;
  }
  }
