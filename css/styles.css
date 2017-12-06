@@ -62,6 +62,9 @@ main {
 	background-color: #FFFFFF;
 	height: 25px;
 }
+.name {
+	display: none;
+}
 .pistas {
 	text-align: center;
 	color: blue;

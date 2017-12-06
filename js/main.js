@@ -7,11 +7,28 @@
 
 var score = document.querySelector('.tries');
 var button = document.querySelector('.boton_try');
+var puntos=1;
+var pista=document.querySelector ('.pista');
 
-//El número aleatorio no con cada click
+
+//El número aleatorio NO con cada click, fuera
 var aleatorio = Math.random()*100;
 var aleatorio2 = Math.ceil(aleatorio);
 
+
+//El numero de intentos al hacer click
 	button.addEventListener('click', function(){
 		console.log(aleatorio2);
+		score.innerHTML=puntos++;
+//Las pistas o acierto
+var numero= document.querySelector ('#box_number').value;
+		if (numero<aleatorio2) {
+			pista.innerHTML= 'Te has quedado corta ¡Prueba otra vez!'
+		}
+		else if (numero>aleatorio2) {
+			pista.innerHTML='Te has pasado ¡Inténtalo de nuevo!'
+		}
+		else {
+			pista.innerHTML='¡¡Enhorabuena, has acertado!!'
+		};
 });
