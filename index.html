@@ -8,32 +8,38 @@
 	<title>Juego</title>
 </head>
 <body>
+	<!-- TÍTULO -->
 	<section class="primero">
 		<header>
 			<h1> Adivina el número</h1>
 			<p class="tries">0</p>
 		</header>
+
 		<main>
+<!-- INTRODUCIR EL NÜMERO -->
 		<form class="number" action="index.html" method="post">
 			<label for="box_number" class="introduce">Introduce un número</label>
 			<input type="text" id="box_number" name="number" class="box_number">
 			<button type="button" class="boton_try" name="button">Prueba</button>
 		</form>
-		<form class="name open" action="index.html" method="post">
+<!-- OCULTO/INTRODUCIR NOMBRE -->
+		<form class="name" action="index.html" method="post">
 			<label for="box_name" class="introduce"></label>
 			<input type="text" id="box_name" name="name" placeholder="Nombre">
 			<button type="button" class="boton_save" name="button">Guarda</button>
 		</form>
+<!-- PISTAS/INSTRUCCIONES -->
 		<div class="pistas"> <p class="pista">Escribe un número del 0 al 100 y prueba</p>
 		</div>
 	</main>
 </section>
+<!-- HISTÓRICO -->
 	<section class="historico">
 		<div class="history">
 			<h1>Histórico</h1>
 		</div>
 		<div class="orden">
-			<ul>
+			<ul class="lista">
 
 			</ul>
 		</div>

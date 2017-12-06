@@ -7,26 +7,35 @@
 
 var score = document.querySelector('.tries');
 var button = document.querySelector('.boton_try');
-var puntos=1;
-var pista=document.querySelector ('.pista');
-var guardar=document.querySelector ('.name')
+var puntos=0;
+var pista=document.querySelector('.pista');
+var guardar=document.querySelector('.name');
 
 
-//El número aleatorio NO con cada click, fuera
-var aleatorio = Math.random()*100;
-var aleatorio2 = Math.ceil(aleatorio);
 
+//El número aleatorio NO con cada click, fuera.
+// Antes no era función, pero ahora sí porque luego, cuando acierten, la necesitaré para crear otro número nuevo.
+function aleatorio3 (){
+ 	var aleatorio = Math.random()*100;
+ 	var aleatorio = Math.ceil(aleatorio);
+	return aleatorio;
+}
 
-//El numero de intentos al hacer click
+var aleatorio2 = aleatorio3();
+console.log(aleatorio2);
+
+//El click
 button.addEventListener('click', function(){
-
-//Las pistas o acierto
+//El input como valor
 var numero= document.querySelector ('#box_number').value;
+
 var numero = parseInt(numero);
 //Cuando es un número del 0 al 100
-	if (numero<101 && numero>0){
-		console.log(aleatorio2);
-		score.innerHTML=puntos++;
+	if (numero<101 && numero>=0){
+		//El numero de intentos al hacer click
+
+		score.innerHTML=1+puntos++;
+		//Pistas
 		if (numero<aleatorio2) {
 			pista.innerHTML= 'Te has quedado corta ¡Prueba otra vez!'
 		}
@@ -35,14 +44,35 @@ var numero = parseInt(numero);
 		}
 		else if (numero==aleatorio2){
 			pista.innerHTML='¡¡Enhorabuena, has acertado!!'
-			// guardar.classList.remove ('.name')
-			// guardar.classList.add ('.open')
+			guardar.classList.remove('name')
+			guardar.classList.add('open')
 		}}
-//Cuando o no es un número o es menor de cero o mayor de 100.
+//Cuando o no es un número o es menor de 0 o mayor de 100.
 	else if (numero>100 || numero<0) {
 		alert ('Solo se permiten números del 0 al 100.')
 	}
 	else {
 		alert ('Escribe un número con dígitos.')
 	}
+});
+
+////////////////////////////////////////////////////////////
+
+var boton_s=document.querySelector('.boton_save')
+var hstrc=document.querySelector('.lista')
+
+//Hacer click en el botón guardar
+boton_s.addEventListener('click', function(){
+	aleatorio3();
+	aleatorio2 = aleatorio3();
+	console.log(aleatorio2);
+//Volver a ocultar lo de guardar el nombre
+	guardar.classList.remove('open')
+	guardar.classList.add('name');
+//Resetear el marcador y las pistas
+	score.innerHTML='0';
+	pista.innerHTML='Escribe un número del 0 al 100 y prueba';
+//Histórico
+	var nombre= document.querySelector ('#box_name').value;
+	hstrc.innerHTML='<li>'+ nombre +'</li>'+
 });

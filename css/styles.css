@@ -62,12 +62,17 @@ main {
 	background-color: #FFFFFF;
 	height: 25px;
 }
+.boton_save {
+	margin-left: 5px;
+}
+.open {
+	display: inline;
+	margin-top:25px;
+}
 .name {
 	display: none;
 }
-/*.open {
-	display: inline;
-}*/
+
 .pistas {
 	text-align: center;
 	color: blue;
@@ -95,3 +100,14 @@ main {
 	top: 63px;
  }
  }
+@media all and (max-width:395px) {
+	.open {
+		display: flex;
+    flex-direction: column;
+    align-items: center;
+		margin-top: 15px;
+	}
+	.boton_save {
+		margin-top: 20px;
+		margin-left: 0;
+	}
