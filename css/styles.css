@@ -6,13 +6,19 @@ body{
 	flex-direction: column;
 	flex-wrap: nowrap;
 	justify-content: space-around;
-	background-color: #D2D2D2;
 	width: 100%;
 	padding: 0;
 	margin: 0;
 	font-family: sans-serif;
 	min-height: 100vh;
+	background-image: url("../images/fondo-11.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
 	}
+background {
+	width: 100%;
+	height: auto;
+}
 .primero {
 	border-right: 0;
  	border-bottom: 2px solid black;
@@ -27,10 +33,10 @@ header {
 .tries {
 	position: absolute;
 	color: red;
-	font-size: 50px;
+	font-size: 65px;
 	font-weight: bold;
-	right:40px;
-	top: 63px;
+	right:20px;
+	top: 45px;
 	 }
 main {
 	display:flex;
@@ -43,6 +49,7 @@ main {
 .introduce {
 	display: block;
 	text-align: center;
+	font-weight: bold;
 	margin: 20px 0 10px 0;
 }
 .number {
@@ -79,21 +86,23 @@ main {
 .pistas {
 	text-align: center;
 	color: blue;
-	border: 2px solid blue;
+	border: 3px solid blue;
 	margin-top: 80px;
 	width: 80%;
 	margin-bottom: 80px;
+	font-weight: bold
 }
 .historico {
-	width: 300px;
-	text-align: center;
+	width: 100%;
 	font-size: 15px;
+	background-color: #F8D47C;
+}
+.hh{
+	margin-left: 25px;
 }
 li {
 	text-align: left;
 	padding:0 0 5px 10px;
-
-
 }
 
 @media all and (min-width:900px) {
@@ -105,9 +114,12 @@ li {
 	border-bottom: 0;
 }
 .tries {
-	right:270px;
+	right:290px;
 	top: 15px;
  }
+ .historico {
+	width: 300px;
+	}
  }
 @media all and (min-width:395px) {
 	.open {
