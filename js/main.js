@@ -22,7 +22,7 @@ console.log(aleatorio2);
 //El click
 button.addEventListener('click', function(){
 //El input como valor
-var numero= document.querySelector ('#box_number').value;
+var numero= document.getElementById('box_number').value;
 //Cuando es un número del 0 al 100
 	if (numero<101 && numero>=0){
 		//El numero de intentos al hacer click
@@ -59,11 +59,9 @@ boton_s.addEventListener('click', function(){
 	aleatorio3();
 	aleatorio2 = aleatorio3();
 	console.log(aleatorio2);
-//Volver a ocultar lo de guardar el nombre
-	guardar.classList.remove('open')
-	guardar.classList.add('name');
 //Histórico con objetos y dentro 2 arrays (nombres e intentos)
-		var nombre= document.querySelector ('#box_name').value;
+	function historicoLista () {
+		var nombre= document.getElementById('box_name').value;
 		var nombres = {
 			name_s:
 			[],
@@ -83,8 +81,20 @@ boton_s.addEventListener('click', function(){
 			for (var i=add;i<list_h.length;i++){
 			};
 		hstrc.innerHTML+= add;
-//Resetear el marcador y las pistas
+	}
+	historicoLista();
+//Resetear
+	function reseteo (){
+		//Los inputs
+		document.getElementById('box_number').value = "";
+  	document.getElementById ('box_name').value = "";
+		//El marcador a 0 otra vez y las pistas
 		puntos=0;
 		score.innerHTML=puntos;
 		pista.innerHTML='Escribe un número del 0 al 100 y prueba';
+		//Volver a ocultar lo de guardar el nombre
+		guardar.classList.remove('open')
+		guardar.classList.add('name');
+		}
+		reseteo();
 });
