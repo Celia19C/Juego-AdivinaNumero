@@ -86,6 +86,13 @@ main {
 	font-size: 15px;
 }
 
+.time {
+	position: absolute;
+	left:15px;
+	top: 15px;
+	font-weight: bold;
+}
+
 @media all and (max-width:900px) {
  body {
  	flex-direction: column;

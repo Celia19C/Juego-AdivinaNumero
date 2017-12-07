@@ -5,6 +5,8 @@
 // actualizamos el contador de intentos cada que el usuario pruebe
 
 
+//////////////////////////////////////////////////////////////////
+
 var score = document.querySelector('.tries');
 var button = document.querySelector('.boton_try');
 var puntos=0;
@@ -33,7 +35,6 @@ var numero = parseInt(numero);
 //Cuando es un número del 0 al 100
 	if (numero<101 && numero>=0){
 		//El numero de intentos al hacer click
-
 		score.innerHTML=1+puntos++;
 		//Pistas
 		if (numero<aleatorio2) {
@@ -60,7 +61,7 @@ var numero = parseInt(numero);
 
 var boton_s=document.querySelector('.boton_save')
 var hstrc=document.querySelector('.lista')
-
+var intentos=document.querySelector('.score')
 //Hacer click en el botón guardar
 boton_s.addEventListener('click', function(){
 	aleatorio3();
@@ -69,10 +70,29 @@ boton_s.addEventListener('click', function(){
 //Volver a ocultar lo de guardar el nombre
 	guardar.classList.remove('open')
 	guardar.classList.add('name');
-//Resetear el marcador y las pistas
-	score.innerHTML='0';
-	pista.innerHTML='Escribe un número del 0 al 100 y prueba';
-//Histórico
-	var nombre= document.querySelector ('#box_name').value;
-	hstrc.innerHTML='<li>'+ nombre +'</li>'+
+	//Resetear el marcador y las pistas
+		score.innerHTML=0;
+		pista.innerHTML='Escribe un número del 0 al 100 y prueba';
+	//Histórico
+		var nombre= document.querySelector ('#box_name').value;
+
+		var nombres = {
+			name_s:
+			[],
+			intentos_s:
+			[]
+		};
+		nombres.name_s.push(nombre)
+		console.log(nombres)
+		var list_h= nombres.name_s;
+		console.log(list_h)
+		nombres.intentos_s.push(puntos)
+		console.log(nombres)
+		var list_hi= nombres.intentos_s;
+		console.log(list_hi)
+		var add;
+
+		add += '<li>'+ list_h +': ' + list_hi +' intentos. </li>';
+		hstrc.innerHTML= add;
+
 });
