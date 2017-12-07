@@ -1,18 +1,10 @@
 'use strict';
-// Vamos a realizar primero una versión sencilla del juego. Para ello tenemos que realizar las siguientes funcionalidades desde JavaScript:
-// generar un número aleatorio con la ayuda de Math.random y Math.ceil
-// al pulsar el botón de prueba comparamos el número que el usuario ha escrito en el input con el número aleatorio, y pintamos el feedback correspondiente en la pantalla ("demasiado alto", "demasiado bajo", "acertado")
-// actualizamos el contador de intentos cada que el usuario pruebe
-
-
-//////////////////////////////////////////////////////////////////
 
 var score = document.querySelector('.tries');
 var button = document.querySelector('.boton_try');
 var puntos=0;
 var pista=document.querySelector('.pista');
 var guardar=document.querySelector('.name');
-
 
 
 //El número aleatorio NO con cada click, fuera.
@@ -30,8 +22,6 @@ console.log(aleatorio2);
 button.addEventListener('click', function(){
 //El input como valor
 var numero= document.querySelector ('#box_number').value;
-
-var numero = parseInt(numero);
 //Cuando es un número del 0 al 100
 	if (numero<101 && numero>=0){
 		//El numero de intentos al hacer click
@@ -44,7 +34,7 @@ var numero = parseInt(numero);
 			pista.innerHTML='Te has pasado ¡Inténtalo de nuevo!'
 		}
 		else if (numero==aleatorio2){
-			pista.innerHTML='¡¡Enhorabuena, has acertado!!'
+			pista.innerHTML= 'El '+ numero +' ¡¡Enhorabuena, has acertado!!'
 			guardar.classList.remove('name')
 			guardar.classList.add('open')
 		}}
@@ -61,19 +51,17 @@ var numero = parseInt(numero);
 
 var boton_s=document.querySelector('.boton_save')
 var hstrc=document.querySelector('.lista')
-var intentos=document.querySelector('.score')
+
 //Hacer click en el botón guardar
 boton_s.addEventListener('click', function(){
+//Número aleatorio nuevo.Llamando a la función
 	aleatorio3();
 	aleatorio2 = aleatorio3();
 	console.log(aleatorio2);
 //Volver a ocultar lo de guardar el nombre
 	guardar.classList.remove('open')
 	guardar.classList.add('name');
-	//Resetear el marcador y las pistas
-		score.innerHTML=0;
-		pista.innerHTML='Escribe un número del 0 al 100 y prueba';
-	//Histórico
+//Histórico con objetos y dentro 2 arrays (nombres e intentos)
 		var nombre= document.querySelector ('#box_name').value;
 		var nombres = {
 			name_s:
@@ -89,11 +77,13 @@ boton_s.addEventListener('click', function(){
 		console.log(nombres)
 		var list_hi= nombres.intentos_s;
 		console.log(list_hi)
-		var add = '<li>'+ list_h +': ' + list_hi +' intentos. </li>';
+//Para que se guarden uno después de otro, se acumulen.
+		var add = '<li>'+ list_h +' - ' + list_hi +' intentos. </li>';
 			for (var i=add;i<list_h.length;i++){
-
 			};
 		hstrc.innerHTML+= add;
-		//Para que no se acumulen los intentos
+//Resetear el marcador y las pistas
 		puntos=0;
+		score.innerHTML=puntos;
+		pista.innerHTML='Escribe un número del 0 al 100 y prueba';
 });
