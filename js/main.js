@@ -75,7 +75,6 @@ boton_s.addEventListener('click', function(){
 		pista.innerHTML='Escribe un número del 0 al 100 y prueba';
 	//Histórico
 		var nombre= document.querySelector ('#box_name').value;
-
 		var nombres = {
 			name_s:
 			[],
@@ -90,9 +89,11 @@ boton_s.addEventListener('click', function(){
 		console.log(nombres)
 		var list_hi= nombres.intentos_s;
 		console.log(list_hi)
-		var add;
+		var add = '<li>'+ list_h +': ' + list_hi +' intentos. </li>';
+			for (var i=add;i<list_h.length;i++){
 
-		add += '<li>'+ list_h +': ' + list_hi +' intentos. </li>';
-		hstrc.innerHTML= add;
-
+			};
+		hstrc.innerHTML+= add;
+		//Para que no se acumulen los intentos
+		puntos=0;
 });
