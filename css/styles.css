@@ -3,19 +3,21 @@
 }
 body{
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
+	flex-wrap: nowrap;
 	justify-content: space-around;
 	background-color: #D2D2D2;
 	width: 100%;
 	padding: 0;
 	margin: 0;
 	font-family: sans-serif;
+	min-height: 100vh;
 	}
 .primero {
-	border-right: 2px solid black;
+	border-right: 0;
+ 	border-bottom: 2px solid black;
 	width: 100%;
-	height: 100vh;
-}
+	}
 header {
 	text-align: center;
 	width: 100%;
@@ -27,9 +29,9 @@ header {
 	color: red;
 	font-size: 50px;
 	font-weight: bold;
-	right:270px;
-	top: 15px;
- }
+	right:40px;
+	top: 63px;
+	 }
 main {
 	display:flex;
 	flex-direction: column;
@@ -63,58 +65,56 @@ main {
 	height: 25px;
 }
 .boton_save {
-	margin-left: 5px;
+	margin-top: 20px;
 }
 .open {
-	display: inline;
-	margin-top:25px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 15px;
 }
 .name {
 	display: none;
 }
-
 .pistas {
 	text-align: center;
 	color: blue;
 	border: 2px solid blue;
 	margin-top: 80px;
 	width: 80%;
+	margin-bottom: 80px;
 }
 .historico {
 	width: 300px;
 	text-align: center;
 	font-size: 15px;
 }
+li {
+	text-align: left;
+	padding:0 0 5px 10px;
 
-.time {
-	position: absolute;
-	left:15px;
-	top: 15px;
-	font-weight: bold;
+
 }
 
-@media all and (max-width:900px) {
+@media all and (min-width:900px) {
  body {
- 	flex-direction: column;
-	flex-wrap: nowrap;
+ 	flex-direction: row;
  }
 .primero {
-	border-right: 0;
- 	border-bottom: 2px solid black;
+	border-right: 2px solid black;
+	border-bottom: 0;
 }
 .tries {
-	right:40px;
-	top: 63px;
+	right:270px;
+	top: 15px;
  }
  }
-@media all and (max-width:395px) {
+@media all and (min-width:395px) {
 	.open {
-		display: flex;
-    flex-direction: column;
-    align-items: center;
-		margin-top: 15px;
+		display: inline;
+		margin-top:25px;
 	}
 	.boton_save {
-		margin-top: 20px;
-		margin-left: 0;
+		margin-left: 5px;
+		margin-top: 0;
 	}

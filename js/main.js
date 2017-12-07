@@ -14,9 +14,10 @@ function aleatorio3 (){
  	var aleatorio = Math.ceil(aleatorio);
 	return aleatorio;
 }
-
 var aleatorio2 = aleatorio3();
 console.log(aleatorio2);
+
+
 
 //El click
 button.addEventListener('click', function(){
@@ -78,7 +79,7 @@ boton_s.addEventListener('click', function(){
 		var list_hi= nombres.intentos_s;
 		console.log(list_hi)
 //Para que se guarden uno después de otro, se acumulen.
-		var add = '<li>'+ list_h +' - ' + list_hi +' intentos. </li>';
+		var add = '<li>'+ list_h +' - ' + list_hi +' intentos </li>';
 			for (var i=add;i<list_h.length;i++){
 			};
 		hstrc.innerHTML+= add;
