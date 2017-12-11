@@ -17,12 +17,11 @@ function aleatorio3 (){
 var aleatorio2 = aleatorio3();
 console.log(aleatorio2);
 
-
-
 //El click
 button.addEventListener('click', function(){
 //El input como valor
-var numero= document.getElementById('box_number').value;
+var numero= document.querySelector('#box_number').value;
+	var numero=parseInt(numero);
 //Cuando es un número del 0 al 100
 	if (numero<101 && numero>=0){
 		//El numero de intentos al hacer click
@@ -35,7 +34,7 @@ var numero= document.getElementById('box_number').value;
 			pista.innerHTML='Te has pasado ¡Inténtalo de nuevo!'
 		}
 		else if (numero==aleatorio2){
-			pista.innerHTML= 'El '+ numero +' ¡¡Enhorabuena, has acertado!!'
+			pista.innerHTML= '¡¡Enhorabuena, has acertado!!'
 			guardar.classList.remove('name')
 			guardar.classList.add('open')
 		}}
@@ -61,7 +60,7 @@ boton_s.addEventListener('click', function(){
 	console.log(aleatorio2);
 //Histórico con objetos y dentro 2 arrays (nombres e intentos)
 	function historicoLista () {
-		var nombre= document.getElementById('box_name').value;
+		var nombre= document.querySelector('#box_name').value;
 		var nombres = {
 			name_s:
 			[],
@@ -86,8 +85,8 @@ boton_s.addEventListener('click', function(){
 //Resetear
 	function reseteo (){
 		//Los inputs
-		document.getElementById('box_number').value = "";
-  	document.getElementById ('box_name').value = "";
+		document.querySelector('#box_number').value = "";
+  	document.querySelector ('#box_name').value = "";
 		//El marcador a 0 otra vez y las pistas
 		puntos=0;
 		score.innerHTML=puntos;
