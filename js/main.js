@@ -33,7 +33,7 @@ var numero= document.querySelector('#box_number').value;
 		else if (numero>aleatorio2) {
 			pista.innerHTML='Te has pasado ¡Inténtalo de nuevo!'
 		}
-		else if (numero==aleatorio2){
+		else if (numero===aleatorio2){
 			pista.innerHTML= '¡¡Enhorabuena, has acertado!!'
 			guardar.classList.remove('name')
 			guardar.classList.add('open')
