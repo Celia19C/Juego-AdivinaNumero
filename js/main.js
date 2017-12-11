@@ -28,29 +28,29 @@ var numero= document.querySelector('#box_number').value;
 		score.innerHTML=1+puntos++;
 		//Pistas
 		if (numero<aleatorio2) {
-			pista.innerHTML= 'Te has quedado corta ¡Prueba otra vez!'
+			pista.innerHTML= 'Te has quedado corta ¡Prueba otra vez!';
 		}
 		else if (numero>aleatorio2) {
-			pista.innerHTML='Te has pasado ¡Inténtalo de nuevo!'
+			pista.innerHTML='Te has pasado ¡Inténtalo de nuevo!';
 		}
 		else if (numero===aleatorio2){
-			pista.innerHTML= '¡¡Enhorabuena, has acertado!!'
-			guardar.classList.remove('name')
-			guardar.classList.add('open')
+			pista.innerHTML= '¡¡Enhorabuena, has acertado!!';
+			guardar.classList.remove('name');
+			guardar.classList.add('open');
 		}}
 //Cuando o no es un número o es menor de 0 o mayor de 100.
 	else if (numero>100 || numero<0) {
-		alert ('Solo se permiten números del 0 al 100.')
+		alert ('Solo se permiten números del 0 al 100.');
 	}
 	else {
-		alert ('Escribe un número con dígitos.')
+		alert ('Escribe un número con dígitos.');
 	}
 });
 
 ////////////////////////////////////////////////////////////
 
-var boton_s=document.querySelector('.boton_save')
-var hstrc=document.querySelector('.lista')
+var boton_s=document.querySelector('.boton_save');
+var hstrc=document.querySelector('.lista');
 
 //Hacer click en el botón guardar
 boton_s.addEventListener('click', function(){
@@ -67,14 +67,14 @@ boton_s.addEventListener('click', function(){
 			intentos_s:
 			[]
 		};
-		nombres.name_s.push(nombre)
-		console.log(nombres)
+		nombres.name_s.push(nombre);
+		console.log(nombres);
 		var list_h= nombres.name_s;
-		console.log(list_h)
-		nombres.intentos_s.push(puntos)
-		console.log(nombres)
+		console.log(list_h);
+		nombres.intentos_s.push(puntos);
+		console.log(nombres);
 		var list_hi= nombres.intentos_s;
-		console.log(list_hi)
+		console.log(list_hi);
 //Para que se guarden uno después de otro, se acumulen.
 		var add = '<li>'+ list_h +' - ' + list_hi +' intentos </li>';
 			for (var i=add;i<list_h.length;i++){
@@ -92,7 +92,7 @@ boton_s.addEventListener('click', function(){
 		score.innerHTML=puntos;
 		pista.innerHTML='Escribe un número del 0 al 100 y prueba';
 		//Volver a ocultar lo de guardar el nombre
-		guardar.classList.remove('open')
+		guardar.classList.remove('open');
 		guardar.classList.add('name');
 		}
 		reseteo();

@@ -17,17 +17,18 @@
 
 		<main>
 <!-- INTRODUCIR EL NÜMERO -->
-		<form class="number" action="index.html" method="post">
+ 	<!-- Antes lo tenía con FORM pero se reseteaba ("enviaba información") cuando le dabas al ENTER -->
+		<div class="number" >
 			<label for="box_number" class="introduce">Introduce un número</label>
 			<input type="text" id="box_number" name="number" class="box_number" placeholder="Escribe un número">
 			<button type="button" class="boton_try" name="button">Prueba</button>
-		</form>
+		</div>
 <!-- OCULTO/INTRODUCIR NOMBRE -->
-		<form class="name" action="index.html" method="post">
+		<div class="name">
 			<label for="box_name" class="introduce"></label>
 			<input type="text" id="box_name" name="name" placeholder="Escribe tu nombre">
 			<button type="button" class="boton_save" name="button">Guarda</button>
-		</form>
+		</div>
 <!-- PISTAS/INSTRUCCIONES -->
 		<div class="pistas"> <p class="pista">Escribe un número del 0 al 100 y prueba</p>
 		</div>
