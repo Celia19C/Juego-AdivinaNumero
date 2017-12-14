@@ -9,23 +9,27 @@ var guardar=document.querySelector('.name');
 
 //El número aleatorio NO con cada click, fuera.
 // Antes no era función, pero ahora sí porque luego, cuando acierten, la necesitaré para crear otro número nuevo.
-function aleatorio3 (){
- 	var aleatorio = Math.random()*100;
- 	var aleatorio = Math.ceil(aleatorio);
-	return aleatorio;
+function aleatorio3 (max){
+
+ 	var aleatorio = Math.random()*max;
+ 	 		aleatorio = Math.ceil(aleatorio);
+			console.log(aleatorio);
+			return aleatorio;
+
 }
-var aleatorio2 = aleatorio3();
-console.log(aleatorio2);
+var aleatorio2 = aleatorio3(50);
+// console.log(aleatorio2);
 
 //El click
 button.addEventListener('click', function(){
 //El input como valor
 var numero= document.querySelector('#box_number').value;
-	var numero=parseInt(numero);
+	 	numero=parseInt(numero);
 //Cuando es un número del 0 al 100
 	if (numero<101 && numero>=0){
 		//El numero de intentos al hacer click
-		score.innerHTML=1+puntos++;
+		puntos=puntos+1;
+		score.innerHTML=puntos;
 		//Pistas
 		if (numero<aleatorio2) {
 			pista.innerHTML= 'Te has quedado corta ¡Prueba otra vez!';
@@ -47,39 +51,45 @@ var numero= document.querySelector('#box_number').value;
 	}
 });
 
-////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 
 var boton_s=document.querySelector('.boton_save');
 var hstrc=document.querySelector('.lista');
 
+
+var nombres = {
+	name_s:
+	[],
+	intentos_s:
+	[]
+};
+
 //Hacer click en el botón guardar
 boton_s.addEventListener('click', function(){
 //Número aleatorio nuevo.Llamando a la función
-	aleatorio3();
-	aleatorio2 = aleatorio3();
-	console.log(aleatorio2);
+	// aleatorio3(50);
+	aleatorio2 = aleatorio3(100);
+	// console.log(aleatorio2);
 //Histórico con objetos y dentro 2 arrays (nombres e intentos)
+
 	function historicoLista () {
 		var nombre= document.querySelector('#box_name').value;
-		var nombres = {
-			name_s:
-			[],
-			intentos_s:
-			[]
-		};
+
 		nombres.name_s.push(nombre);
-		console.log(nombres);
+		// console.log(nombres);
 		var list_h= nombres.name_s;
-		console.log(list_h);
+		// console.log(list_h);
 		nombres.intentos_s.push(puntos);
 		console.log(nombres);
 		var list_hi= nombres.intentos_s;
-		console.log(list_hi);
+		// console.log(list_hi);
 //Para que se guarden uno después de otro, se acumulen.
-		var add = '<li>'+ list_h +' - ' + list_hi +' intentos </li>';
-			for (var i=add;i<list_h.length;i++){
+		var add ='';
+			for (var i=0;i<list_h.length;i++){
+				add+= '<li>'+ list_h[i] +' - ' + list_hi[i] +' intentos </li>';
 			};
-		hstrc.innerHTML+= add;
+		hstrc.innerHTML= add;
 	}
 	historicoLista();
 //Resetear
